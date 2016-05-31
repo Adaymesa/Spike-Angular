@@ -12,6 +12,7 @@
   <div ng-controller="ToDoController as ctlr">
     <p ng-repeat="todo in ctlr.todos">
       {{todo.task}}: {{ todo.completed ? "completed" : "not completed" }}
+      <span ng-click="todo.complete();">Complete</span>
     </p>
 
     <input type="text" ng-model="todoText">
