@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="toDoApp">
-  <head>
-		<meta charset="utf-8">
-    <title>title</title>
-    <link rel="stylesheet" href="style.css">
-    <script src=https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js></script>
-    <script type="text/javascript" src="app.js"></script>
-    <script type="text/javascript" src="controllers.js"></script>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <title>title</title>
+  <link rel="stylesheet" href="style.css">
+  <script src=https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js></script>
+  <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript" src="controllers.js"></script>
+</head>
 <body>
-		<div ng-controller="ToDoController as controller">
-    <p ng-repeat="todo in controller.todos">
+  <div ng-controller="ToDoController as ctlr">
+    <p ng-repeat="todo in ctlr.todos">
       {{todo.task}}: {{ todo.completed ? "completed" : "not completed" }}
     </p>
+
+    <input type="text" ng-model="todoText">
+    <button ng-click='ctlr.addTodo(todoText)'>Add task</button>
   </div>
 
-  </body>
+</body>
 </html>
